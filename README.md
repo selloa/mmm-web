@@ -1,5 +1,5 @@
 # MMM catalog viewer (`mmm-viewer`)
-// remove this line that was written to push the repo for github pages deployment to trigger
+
 Small **static** web UI for the public **MMM catalog API** ([`mmm-api`](https://github.com/selloa/mmm-api)): browse `GET /v1/entries`, open a row to load `GET /v1/entries/{catalog_id}`. Canonical data remains in [`mmm-data`](https://github.com/selloa/mmm-data); this repo is only a **read-only client** (the “viewer” peer from your architecture notes).
 
 ## Run locally
