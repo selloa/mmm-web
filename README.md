@@ -1,6 +1,6 @@
 # MMM catalog viewer (`mmm-viewer`)
 
-Small **static** web UI for the public **MMM catalog API** ([`mmm-api`](https://github.com/selloa/mmm-api)): browse `GET /v1/entries`, open a row to load `GET /v1/entries/{catalog_id}`. Canonical data remains in [`mmm-data`](https://github.com/selloa/mmm-data); this repo is only a **read-only client** (the “viewer” peer from your architecture notes).
+Small **static** web UI for the public **MMM catalog API** ([`mmm-api`](https://github.com/selloa/mmm-api)): browse `GET /v1/entries`, open a row to load `GET /v1/entries/{catalog_id}`. Canonical data remains in [`mmm-data`](https://github.com/selloa/mmm-data); this repo is only a **read-only client** (the “viewer” peer from your architecture notes). **Planning / vocabulary:** [mmm-system-design](https://github.com/selloa/mmm-system-design).
 
 ## Run locally
 
