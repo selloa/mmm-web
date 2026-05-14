@@ -24,6 +24,9 @@ const FIELD_ORDER: string[] = [
   "mirror_url_dropbox_public",
 ];
 
+/** Shown in Details view as plain text — URLs are dead; links would mislead users. */
+const LEGACY_NON_LINK_FIELD = "forum_thread_url_adventure_treff_legacy";
+
 /**
  * Base URL of mmm-api (no trailing slash).
  * In `npm run dev`, defaults to same-origin empty string so Vite can proxy `/v1` (avoids CORS).
@@ -114,7 +117,7 @@ function isHttpUrl(s: string): boolean {
   return /^https?:\/\//i.test(s.trim());
 }
 
-function formatValue(val: unknown): Node {
+function formatValue(val: unknown, fieldKey?: string): Node {
   if (val === null || val === undefined) {
     return el("span", { class: "cell-empty", text: "—" });
   }
@@ -126,7 +129,8 @@ function formatValue(val: unknown): Node {
     return document.createTextNode(JSON.stringify(val));
   }
   const s = String(val);
-  if (isHttpUrl(s)) {
+  const linkOk = fieldKey !== LEGACY_NON_LINK_FIELD;
+  if (linkOk && isHttpUrl(s)) {
     const a = el("a", {
       href: s,
       rel: "noopener noreferrer",
@@ -144,7 +148,7 @@ function buildFieldList(row: Record<string, unknown>): HTMLElement {
   const list = el("div", { class: "field-list" }, []);
   for (const key of orderedKeys(row)) {
     const valueWrap = el("div", { class: "field-value" }, []);
-    valueWrap.appendChild(formatValue(row[key]));
+    valueWrap.appendChild(formatValue(row[key], key));
     const block = el("div", { class: "field-row" }, [
       el("div", { class: "field-key", text: key }),
       valueWrap,
