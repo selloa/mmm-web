@@ -1,8 +1,8 @@
 {
-  "name": "mmm-viewer",
+  "name": "mmm-api-viewer",
   "private": true,
   "version": "0.1.0",
-  "description": "Read-only catalog viewer for the MMM public API (mmm-api).",
+  "description": "Read-only browser UI for the MMM public API (mmm-api).",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -171,7 +171,7 @@ function render(root: HTMLElement): void {
   root.appendChild(
     el("header", { class: "site-header" }, [
       el("div", {}, [
-        el("h1", { text: "MMM catalog viewer" }),
+        el("h1", { text: "MMM API Viewer" }),
         el("p", {
           text: "Read-only browse over the public mmm-api. Data lives in mmm-data; this UI is a peer client.",
         }),
@@ -213,8 +213,8 @@ function render(root: HTMLElement): void {
   const aDocs = el("a", { href: `${base}/docs` });
   aDocs.textContent = `${base}/docs`;
   foot.append(aDocs, " · Source repo: ");
-  const aWeb = el("a", { href: "https://github.com/selloa/mmm-web" });
-  aWeb.textContent = "mmm-web";
+  const aWeb = el("a", { href: "https://github.com/selloa/mmm-api-viewer" });
+  aWeb.textContent = "mmm-api-viewer";
   foot.append(aWeb, " · API repo: ");
   const aApi = el("a", { href: "https://github.com/selloa/mmm-api" });
   aApi.textContent = "mmm-api";
